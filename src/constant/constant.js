@@ -1,0 +1,1 @@
+export const LINE_LIFF_ID = "2007867112-RYAXp20O"

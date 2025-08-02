@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+// import "./App.css";
 import liff from "@line/liff";
+import { LINE_LIFF_ID } from "./constant/constant";
 
 function App() {
   const [profile, setProfile] = useState(null);
@@ -11,7 +12,7 @@ function App() {
     const initializeLiff = async () => {
       try {
         await liff.init({
-          liffId: "2007867112-RYAXp20O", // Replace with your own LIFF ID
+          liffId: LINE_LIFF_ID, // Replace with your own LIFF ID
         });
 
         if (!liff.isLoggedIn()) {
@@ -33,7 +34,7 @@ function App() {
       <div> home </div>
       <h1>React with LIFF</h1>
       {profile && (
-        <div>
+        <div class=" d-flex ">
           <img
             src={profile.pictureUrl}
             alt="Profile"
