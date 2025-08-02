@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+import liff from "@line/liff";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [profile, setProfile] = useState(null);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    // This function will run when the component mounts
+    const initializeLiff = async () => {
+      try {
+        await liff.init({
+          liffId: "2007867112-RYAXp20O", // Replace with your own LIFF ID
+        });
+
+        if (!liff.isLoggedIn()) {
+          liff.login(); // Redirects to LINE login screen
+        } else {
+          const userProfile = await liff.getProfile();
+          setProfile(userProfile);
+        }
+      } catch (e) {
+        setError(`LIFF initialization failed: ${e.message}`);
+      }
+    };
+
+    initializeLiff();
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div> home </div>
+      <h1>React with LIFF</h1>
+      {profile && (
+        <div>
+          <img
+            src={profile.pictureUrl}
+            alt="Profile"
+            style={{ width: 100, borderRadius: "50%" }}
+          />
+          <p>Display Name: {profile.displayName}</p>
+          <p>User ID: {profile.userId}</p>
+          <p>Status Message: {profile.statusMessage}</p>
+        </div>
+      )}
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
