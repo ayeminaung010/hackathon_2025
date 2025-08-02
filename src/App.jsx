@@ -6,7 +6,6 @@ import Profile from "./pages/Profile";
 function App() {
   return (
     <>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
