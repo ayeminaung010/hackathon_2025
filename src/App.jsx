@@ -1,13 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import React from "react";
-import Navbar from "./components/Navbar";
+import Arrived from "./pages/Arrived";
+import Checkout from './pages/Checkout';
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import Checkout from './pages/Checkout'
 import Shop from "./pages/Shop";
 import ToReceive from "./pages/ToReceive";
-import ToShip from "./pages/Toship";
-import Arrived from "./pages/Arrived";
+import ToShip from "./pages/ToShip";
 function App() {
   return (
     <>
