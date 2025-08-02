@@ -1,4 +1,3 @@
-import React from "react";
 import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -19,7 +18,7 @@ export default function Navbar() {
         }}
       >
         <img
-          src="https://i.imgur.com/4M34hi2.png"
+          src="../../src/assets/logo/sneakspot_Logo.png"
           alt="logo"
           style={{
             width: 38,
