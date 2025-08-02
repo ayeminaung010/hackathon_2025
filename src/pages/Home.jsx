@@ -2,12 +2,12 @@ import Ads from "../assets/Ads.png"; // adjust path if needed
 import BottomNavbar from "../components/BottomNavbar";
 import HotSaleList from "../components/HomeComponent/HotSaleList";
 import RecommendList from "../components/HomeComponent/RecommendList";
-import TopNavBar from "../components/TopNavBar";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
     <>
-      <TopNavBar />
+    <Navbar/>
       <div style={{ maxWidth: 480, margin: '0 auto', padding: '0 12px', width: '100%' }}>
         <img
           src={Ads}

@@ -1,6 +1,8 @@
-
+import React from 'react';
 import image2 from "../assets/order/image2.png"; // update with correct path
-import OrderCard from "../components/order-card";
+import OrderCard from "../components/OrderCard";
+import PageHeader from "../components/PageHeader";
+import BottomNavbar from "../components/BottomNavbar";
 
 export default function ToReceive() {
   const receiveOrders = [
@@ -48,56 +50,23 @@ export default function ToReceive() {
   return (
     <div
       style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
+        minHeight: "100vh",
         background: "#e8edf4",
-        padding: "16px",
-        boxSizing: "border-box",
-        overflowY: "auto"
+        paddingBottom: "70px",
+        maxWidth: "480px",
+        margin: "0 auto",
+        position: "relative"
       }}
     >
-      {/* Top-right date and time */}
-      <div
-        style={{
-          position: "absolute",
-          top: "16px",
-          right: "16px",
-          display: "flex",
-          gap: "8px"
-        }}
-      >
-        <span
-          style={{
-            background: "#dee2e6",
-            padding: "4px 10px",
-            borderRadius: "8px",
-            fontSize: "14px"
-          }}
-        >
-          Apr 1, 2025
-        </span>
-        <span
-          style={{
-            background: "#dee2e6",
-            padding: "4px 10px",
-            borderRadius: "8px",
-            fontSize: "14px"
-          }}
-        >
-          9:41 AM
-        </span>
+      <PageHeader title="Orders to Receive" />
+      
+      <div style={{ padding: "16px" }}>
+        {receiveOrders.map((order, i) => (
+          <OrderCard key={i} {...order} />
+        ))}
       </div>
-
-      <h2 style={{ fontWeight: "bold", marginBottom: "16px", marginTop: "40px" }}>
-        Orders to receive
-      </h2>
-
-      {receiveOrders.map((order, i) => (
-        <OrderCard key={i} {...order} />
-      ))}
+      
+      <BottomNavbar />
     </div>
   );
 }

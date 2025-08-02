@@ -1,4 +1,4 @@
-import NewArrivalCard from "./new-arrival-card";
+import NewArrivalCard from "./NewArrivalCard";
 
 export default function NewArrivalList({ products }) {
   return (

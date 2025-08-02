@@ -4,7 +4,7 @@ import image2 from "../assets/new-arrival/image2.png";
 import image3 from "../assets/new-arrival/image3.png";
 import image4 from "../assets/new-arrival/image4.png";
 import image5 from "../assets/new-arrival/image5.png";
-import NewArrivalList from "./all-items-components/new-arrival-list";
+import NewArrivalList from "../components/AllItemComponent/NewArrivalList";
 
 export default function AllItem() {
 
@@ -25,7 +25,7 @@ export default function AllItem() {
     
   
     return (
-      <>
+      <div className="all-item-container mb-5" style={{ padding: "16px", maxWidth: "480px", margin: "0 auto" }}>
         <h3 style={{ paddingLeft: "16px", textAlign: "left", marginBottom: "8px" }}>Nike</h3>
         <NewArrivalList products={nikeProducts} />
 
@@ -35,6 +35,6 @@ export default function AllItem() {
         <h3 style={{ paddingLeft: "16px", textAlign: "left", marginBottom: "8px" }}>NewBalance</h3>
         <NewArrivalList products={newBalanceProducts} />
        
-      </>
+      </div>
     );
   }

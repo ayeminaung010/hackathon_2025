@@ -7,6 +7,7 @@ import Checkout from './pages/Checkout'
 import Shop from "./pages/Shop";
 import ToReceive from "./pages/ToReceive";
 import ToShip from "./pages/Toship";
+import Arrived from "./pages/Arrived";
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/checkout" element={<Checkout/>} />
         <Route path="/toship" element={<ToShip />} />
         <Route path="/toreceive" element={<ToReceive />} />
+        <Route path="/arrived" element={<Arrived />} />
         <Route path="/shop" element={<Shop />} />
       </Routes>
     </>
