@@ -1,42 +1,46 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
 import BottomNavbar from '../components/BottomNavbar';
 import Cart from '../components/checkout_component/Cart';
+import Navbar from '../components/Navbar';
+import image from '../assets/new-arrival/image.png';
+import image1 from '../assets/new-arrival/image1.png';
+import image2 from '../assets/new-arrival/image2.png';
+import image3 from '../assets/new-arrival/image3.png';
+import image4 from '../assets/new-arrival/image4.png';
+
 // This is our main page component.
 function Checkout() {
   const cartItems = [
     {
       id: 1,
-      name: "iPhone 15 Pro",
-      price: 42900,
-      imageUrl: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=200&h=200&fit=crop"
+      name: "Nike Air Force 1 '07",
+      price: 4300,
+      imageUrl: image
     },
     {
       id: 2,
-      name: "AirPods Pro",
-      price: 8900,
-      imageUrl: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=200&h=200&fit=crop"
+      name: "Adidas Stan Smith",
+      price: 3800,
+      imageUrl: image1
     },
     {
       id: 3,
-      name: "MacBook Air M2",
-      price: 39900,
-      imageUrl: "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=200&h=200&fit=crop"
+      name: "Converse Chuck 70",
+      price: 3200,
+      imageUrl: image2
     },
     {
       id: 4,
-      name: "Apple Watch Series 9",
-      price: 13900,
-      imageUrl: "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=200&h=200&fit=crop"
+      name: "Air Jordan 1 Mid",
+      price: 5000,
+      imageUrl: image3
     },
     {
       id: 5,
-      name: "iPad Air",
-      price: 21900,
-      imageUrl: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=200&h=200&fit=crop"
+      name: "New Balance 550",
+      price: 4500,
+      imageUrl: image4
     }
   ];
-
 
   return (
     <div style={{ background: '#e9edf2', minHeight: '100vh', paddingBottom: 70 }}>

@@ -1,4 +1,3 @@
-// components/profile_components/ProfileUI.jsx
 import React, { useEffect, useState } from 'react';
 import { Container, Card, Image, ListGroup, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
