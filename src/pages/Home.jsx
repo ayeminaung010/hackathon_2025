@@ -1,47 +1,37 @@
 import Ads from "../assets/Ads.png"; // adjust path if needed
-import HotSaleList from "./home-components/hotsale-list";
-import RecommendList from "./home-components/recommended-list";
-
+import BottomNavbar from "../components/BottomNavbar";
+import HotSaleList from "../components/HomeComponent/HotSaleList";
+import RecommendList from "../components/HomeComponent/RecommendList";
 import TopNavBar from "../components/TopNavBar";
 
 export default function Home() {
-<<<<<<< HEAD
   return (
     <>
-      {/* <TopNavBar /> */}
-      {/* <HeroBanner/>
-      <ProductCard/> */}
-      {/* <MobileApp/> */}
-      {/* <HotSaleCard/> */}
-    </>
-  );
-}
-=======
-    return (
-      <div style={{ position: "relative", top: "100px" }}>
+      <TopNavBar />
+      <div style={{ maxWidth: 480, margin: '0 auto', padding: '0 12px', width: '100%' }}>
         <img
           src={Ads}
           alt="Advertisement"
           style={{
-            width: "100%",
-            height: "auto",
-            display: "block",
+            width: '100%',
+            maxWidth: '100%',
+            height: 'auto',
+            display: 'block',
+            borderRadius: 12
           }}
         />
-
         <h2 style={{ textAlign: "left", padding: "0 16px", marginTop: "24px" }}>
-        Hot Sales
+          Hot Sales
         </h2>
-
         <HotSaleList />
-
         <h2 style={{ textAlign: "left", padding: "0 16px", marginTop: "24px" }}>
-        Recommend For You
+          Recommend For You
         </h2>
-
         <RecommendList />
-
+        <div style={{ height: 70 }} />
       </div>
-    );
+      <BottomNavbar/>
+    </>
+  );
 }
->>>>>>> 4c22826469033a9458b9a174b55010c15e43cf61
+

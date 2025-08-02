@@ -1,8 +1,8 @@
 import item1 from "../../assets/hot-sale/item1.png";
 import item2 from "../../assets/hot-sale/item2.png";
 import item3 from "../../assets/hot-sale/item3.png";
+import HotSaleCard from "./HotSaleCard";
 
-import HotSaleCard from "./hotsale-card";
 
 const hotSaleItems = [
   { img: item1, name: "Nike Air Force", price: "฿1999" },
@@ -12,7 +12,11 @@ const hotSaleItems = [
 
 export default function HotSaleList() {
   return (
-    <div style={{ display: "flex", overflowX: "auto", gap: "12px", padding: "12px" }}>
+    <div style={{ display: 'flex', overflowX: 'auto', gap: '16px', padding: '8px 0 8px 4px', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+      {/* Hide scrollbar for webkit browsers */}
+      <style>{`
+        .hot-sale-list::-webkit-scrollbar { display: none; }
+      `}</style>
       {hotSaleItems.map((item, index) => (
         <HotSaleCard
           key={index}

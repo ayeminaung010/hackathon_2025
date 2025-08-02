@@ -2,7 +2,7 @@
 import image2 from "../assets/order/image2.png"; // update with correct path
 import OrderCard from "../components/order-card";
 
-export default function Receive() {
+export default function ToReceive() {
   const receiveOrders = [
     {
       brand: "Adidas",

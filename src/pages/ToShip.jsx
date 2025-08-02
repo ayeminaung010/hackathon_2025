@@ -2,7 +2,7 @@
 import image1 from "../assets/order/image1.png";
 import OrderCard from "../components/order-card";
 
-export default function Ship() {
+export default function ToShip() {
   const shipOrders = [
     {
       brand: "Nike",

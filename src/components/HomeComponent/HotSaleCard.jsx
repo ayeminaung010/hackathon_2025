@@ -2,7 +2,9 @@ export default function HotSaleCard({ img, name, price }) {
   return (
     <div
       style={{
-        width: "120px",
+        minWidth: '120px',
+        maxWidth: '160px',
+        width: '40vw',
         padding: "14px 10px",
         borderRadius: "20px",
         background: "#fff",

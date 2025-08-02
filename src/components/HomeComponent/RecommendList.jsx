@@ -1,6 +1,6 @@
 import image from "../../assets/recommended/image.png";
 import image1 from "../../assets/recommended/image1.png";
-import RecommendCard from "./recommended-card";
+import RecommendCard from "./RecommendCard";
 
 export default function RecommendList() {
   return (
