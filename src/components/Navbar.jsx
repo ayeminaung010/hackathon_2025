@@ -1,5 +1,6 @@
 import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from '../assets/logo/sneakspot_Logo.png';
 
 export default function Navbar() {
   return (
@@ -18,7 +19,7 @@ export default function Navbar() {
         }}
       >
         <img
-          src="../../src/assets/logo/sneakspot_Logo.png"
+          src={logo}
           alt="logo"
           style={{
             width: 38,

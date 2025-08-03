@@ -48,6 +48,12 @@ function Checkout() {
       <div style={{ paddingTop: '20px' }}>
         <Cart items={cartItems} />
       </div>
+      {/* checkcout btn  */}
+      <div className="container text-center mt-4">
+        <button onClick={() => alert('Checkout successfully')} className="btn btn-primary" style={{ width: '200px', height: '50px', borderRadius: '25px' }}>
+          Proceed to Checkout
+        </button>
+      </div>
       <BottomNavbar />
     </div>
   );
