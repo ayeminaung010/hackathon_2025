@@ -1,35 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Card, Image, ListGroup, Row, Col, Button } from 'react-bootstrap';
+import { Button, Card, Col, Container, Image, ListGroup, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useLiff } from '../Provider/LiffProvider';
+import { useEffect } from 'react';
 
 export default function ProfileUI() {
   const navigate = useNavigate();
-  const [profile, setProfile] = useState(null);
-  const [loading, setLoading] = useState(true);
+  // const [profile, setProfile] = useState(null);
+  // const [loading, setLoading] = useState(true);
 
+  const { liffObject, profile, loading, error } = useLiff();
   useEffect(() => {
-    const initializeLiff = async () => {
-      try {
-        await window.liff.init({ liffId: process.env.REACT_APP_LINE_LIFF_ID });
-        if (!window.liff.isLoggedIn()) {
-          window.liff.login(); // Redirect to LINE login if not logged in
-        } else {
-          const profile = await window.liff.getProfile();
-          setProfile(profile);
-        }
-      } catch (error) {
-        console.error('LIFF initialization failed', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    initializeLiff();
-  }, []);
+    if (liffObject && profile) {
+      // Profile is available, you can use it
+      console.log('LIFF Object:', liffObject);
+      console.log('User Profile:', profile);
+    }
+  }, [liffObject, profile]);
 
   if (loading) {
     return <div className="text-center py-5">Loading profile...</div>;
   }
+
+  // Function to log in
+  const handleLogin = () => {
+    liffObject?.login();
+  };
+
+  // Function to log out
+  const handleLogout = () => {
+    liffObject?.logout();
+    window.location.reload(); // Reload to reflect the logged-out state
+  };
 
   return (
     <Container className="d-flex justify-content-center align-items-center py-5">

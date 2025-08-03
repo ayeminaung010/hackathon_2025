@@ -1,15 +1,17 @@
 // STEP 3: Simple Profile.js (NO Provider needed)
 // pages/Profile.js
-import React from 'react'
-import ProfileUI from '../components/profile_components/ProfileUI'
-import Navbar from '../components/Navbar'
 import BottomNavbar from '../components/BottomNavbar'
+import Navbar from '../components/Navbar'
+import ProfileUI from '../components/profile_components/ProfileUI'
+import { LiffProvider } from '../components/Provider/LiffProvider'
 
 export default function Profile() {
   return (
     <>
       <Navbar />
-      <ProfileUI />
+      <LiffProvider>
+        <ProfileUI />
+      </LiffProvider>
       <BottomNavbar />
     </>
   )
